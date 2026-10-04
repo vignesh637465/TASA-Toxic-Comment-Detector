@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxic Comment Detector | Text & Speech Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-icon">🛡️⚠️</div>
+            <h1>Toxic Comment Detector</h1>
+            <p class="subtitle">Classify social comments as Safe or Potentially Toxic using NLP Content Moderation Rules</p>
+        </header>
+
+        <!-- Educational Disclaimer Banner -->
+        <div class="disclaimer-banner">
+            ℹ️ <strong>Educational Demonstration Only:</strong> This application is a beginner-friendly demonstration of rule-based content moderation algorithms. It is not a production-grade AI moderation system and does not claim 100% accuracy.
+        </div>
+
+        <!-- Main Card -->
+        <main class="main-card">
+            <!-- Sample Comments Section -->
+            <section class="preset-section">
+                <span class="preset-label">Try sample comments:</span>
+                <div class="preset-buttons">
+                    <button type="button" class="btn-preset" data-type="safe">✅ Safe Comment</button>
+                    <button type="button" class="btn-preset" data-type="insult">⚠️ Insult Comment</button>
+                    <button type="button" class="btn-preset" data-type="threat">🚨 Threat Comment</button>
+                    <button type="button" class="btn-preset" data-type="offensive">🤬 Offensive Comment</button>
+                </div>
+            </section>
+
+            <!-- Input Area -->
+            <section class="input-section">
+                <label for="commentInput" class="input-label">Enter Comment to Analyze:</label>
+                <div class="textarea-wrapper">
+                    <textarea id="commentInput" placeholder="Type or paste user comment here..." rows="5"></textarea>
+                    <div class="character-count"><span id="charCount">0</span> characters | <span id="wordCount">0</span> words</div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="analyzeBtn" class="btn btn-primary">
+                        <span class="btn-icon">🔍</span> Analyze Comment
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <span class="btn-icon">🗑️</span> Clear
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <div class="divider"></div>
+                <h2>Moderation Results</h2>
+
+                <div class="result-grid">
+                    <!-- Classification Badge Card -->
+                    <div class="classification-card" id="classificationCard">
+                        <div class="status-icon" id="resultEmoji">🛡️</div>
+                        <div class="status-title" id="resultTitle">SAFE COMMENT</div>
+                        <div class="toxicity-score-box">
+                            <span class="score-label">Toxicity Risk Score</span>
+                            <span class="score-number" id="toxicityScore">0%</span>
+                        </div>
+                    </div>
+
+                    <!-- Risk Meter Card -->
+                    <div class="summary-card">
+                        <h3>Toxicity Risk Meter</h3>
+                        <div class="progress-bar-container">
+                            <div id="riskMeter" class="progress-bar"></div>
+                        </div>
+                        <div class="risk-labels">
+                            <span>Safe (0%)</span>
+                            <span>Moderate</span>
+                            <span>Toxic (100%)</span>
+                        </div>
+
+                        <!-- Detected Categories -->
+                        <div class="categories-box">
+                            <span class="box-title">Detected Toxicity Categories:</span>
+                            <div id="detectedCategories" class="tags-container">
+                                <span class="no-tags">None detected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suspicious Words Box -->
+                <div class="details-section">
+                    <h3>Flagged Suspicious Words & Phrases</h3>
+                    <div id="suspiciousWords" class="tags-container">
+                        <span class="no-tags">No offensive or toxic words found</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Text & Speech Analysis Project #9 &bull; Content Moderation NLP Demonstration</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
